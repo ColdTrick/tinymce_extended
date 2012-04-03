@@ -1,53 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin_manifest>
-	<field key="author" value="ColdTrick IT Solutions" />
-	<field key="version" value="2.1" />
-	<field key="description" value="TinyMCE Extended plugin." />
-	<field key="website" value="http://www.coldtrick.com/" />
-	<field key="copyright" value="(C) ColdTrick IT Solutions 2009" />
-	<field key="licence" value="GNU Public License version 2" />
-	<field key="elgg_version" value="2009030702" />
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+	<name>TinyMCE Extended</name>
+	<author>ColdTrick IT Solutions</author>
+	<version>3.0</version>
+	<description>Extend TinyMCE with configuration options</description>
+	<website>http://www.coldtrick.com/</website>
+	<copyright>(C) ColdTrick IT Solutions 2009 - 2012</copyright>
+	<license>GNU Public License version 2</license>
+ 	
+ 	<requires>
+		<type>elgg_version</type>
+		<version>2011061200</version>
+	</requires>
+	
+ 	<requires>
+		<type>plugin</type>
+		<name>tinymce</name>
+	</requires>
+
+ 	<category>ColdTrick</category>
+ 	<category>Content</category>
 </plugin_manifest>
-<!--
-
-================
-Features
-================
-- Support TinyMCE 3.2.5 
-- Packed with Image Manager (http://dustweb.ru/projects/tinymce_images/)
-- Select available plugins
-- Customizable menu's
-- extendable valid_elements (will also be excluded from elgg input sanitizer)
-
-================
-Version history
-================
-2.1 (2011-07-22):
-	- added: image manager has multiple upload folders (site, user)
-
-2.0.1 (2011-07-13):
-	- fixed: image manager can now handle files
-	
-2.0 (2011-07-12):
-	- added: image manager
-	
-1.1.1:
-	- changed: minor code fixes to work correctly in Elgg 1.7.4	
-	
-1.1:
-	- added: support for htmlawed
-	- added: embed plugin support
-	
-1.0:
-	- initial version
-
-================
-Todo:
-================
-- Automatic exclude of tags related to plugin being filtered out
-- Dragdrop selection
-- Configure more...
-- Use TinyMCE compressor
-
-
--->

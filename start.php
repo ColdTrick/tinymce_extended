@@ -1,34 +1,24 @@
 <?php
 	
-	require_once(dirname(__FILE__) . "/lib/functions.php");
-	
+	require_once(dirname(__FILE__) . "/lib/hooks.php");
 	
 	function tinymce_extended_init() {
+		elgg_register_plugin_hook_handler('config', 'htmlawed', 'tinymce_extended_htmlawed_config');		
 		
-		// Add our CSS
-		elgg_extend_view('css','tinymce/css');
+		elgg_register_page_handler("tinymce_data", "tinymce_extended_data_handler");
 		
-		if(version_compare(get_version(true), "1.5", "<=")){
-			tinymce_extended_extend_allowed_tags();
-		}
-		
-		if(is_plugin_enabled("htmlawed")){
-			tinymce_extended_extend_htmlawed_config();
-		}
-		
-		register_page_handler("tinymce_data", "tinymce_extended_data_handler");
+		elgg_register_js('tinymce', 'mod/tinymce_extended/vendors/tinymce/jscripts/tiny_mce/tiny_mce.js');
 	}
 	
 	function tinymce_extended_data_handler(){
-		global $CONFIG;
-		$datapath = str_replace($CONFIG->wwwroot . "pg/tinymce_data/", "", current_page_url());
+		$datapath = str_replace(elgg_get_site_url() . "tinymce_data/", "", current_page_url());
 		
 		if((strpos($datapath, "images") === 0) || (strpos($datapath, "files") === 0)){
 			
 			// backwards compatibility == old versions
-			$filename = $CONFIG->dataroot . "tinymce_storage/" . $CONFIG->site->getGUID() . "/" . $datapath;
+			$filename = elgg_get_config("dataroot") . "tinymce_storage/" .elgg_get_site_entity()->getGUID() . "/" . $datapath;
 		} else {
-			$filename = $CONFIG->dataroot . "tinymce_storage/" . $datapath;	
+			$filename = elgg_get_config("dataroot") . "tinymce_storage/" . $datapath;	
 		}
 		
 		$contents = file_get_contents($filename);
@@ -39,8 +29,7 @@
 		header("Cache-Control: public");
 		header("Content-Length: " . strlen($contents));
 		echo $contents;
-		exit();
-		
+		return true;		
 	}
 	
 	if (!function_exists("mime_content_type")) {
@@ -262,14 +251,10 @@
             }
          }
 
-
-
          #-- done
          return $type;
       }
    }
 
      // Make sure the status initialisation function is called on initialisation
-	register_elgg_event_handler('init', 'system', 'tinymce_extended_init', 9999);
-       
-?>
+	elgg_register_event_handler('init', 'system', 'tinymce_extended_init', 9999);

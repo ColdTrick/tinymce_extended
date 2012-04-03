@@ -1,0 +1,32 @@
+= Version history =
+
+3.0 (2012-04-03):
+
+- added: TinyMCE js library version 3.4.9
+- changed: plugin now Elgg 1.8 compatible
+- changed: plugin is now an addition to the default TinyMCE plugin, so it requires tinymce enabled
+
+2.1 (2011-07-22):
+
+- added: image manager has multiple upload folders (site, user)
+
+2.0.1 (2011-07-13):
+
+- fixed: image manager can now handle files
+	
+2.0 (2011-07-12):
+
+- added: image manager
+	
+1.1.1:
+
+- changed: minor code fixes to work correctly in Elgg 1.7.4	
+	
+1.1:
+
+- added: support for htmlawed
+- added: embed plugin support
+	
+1.0:
+
+- initial version
