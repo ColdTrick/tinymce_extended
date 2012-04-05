@@ -10,6 +10,8 @@ $english = array(
 	'tinymce_extended:settings:menu3' => "Third menu buttons",
 	'tinymce_extended:settings:valid_elements' => "Configure valid elements",
 	'tinymce_extended:settings:more_info' => "More info about default configurable buttons and plugins can be found here <a href='http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference' target='_blank'>http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference</a>",
+
+	'tinymce_extended:settings:htmlawed:schemes' => "Extend the htmlawed schemes with the following",
 	
 	// Defaults (no need to change when making new language file)
 	'tinymce_extended:defaults:plugins' => "lists,spellchecker,autosave,fullscreen,paste",

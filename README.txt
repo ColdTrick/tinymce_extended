@@ -9,6 +9,7 @@ TinyMCE with configuration options.
 - Select available plugins
 - Customizable menu's
 - extendable valid_elements (will also be excluded from elgg input sanitizer htmlawed)
+- extend htmlawed schemes
 
 == ToDo ==
 

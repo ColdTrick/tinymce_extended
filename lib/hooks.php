@@ -28,6 +28,15 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 			
 			$return_value["elements"] = $elements;
 		}
+		
+		$htmlawed_schemes = elgg_get_plugin_setting("htmlawed_schemes", "tinymce_extended");
+		if(!empty($htmlawed_schemes)){
+			
+			$current_schemes = elgg_extract("schemes", $return_value, "*:http");
+			
+			$htmlawed_schemes = $current_schemes . "," . ltrim($htmlawed_schemes, ",");
+			$return_value["schemes"] = $htmlawed_schemes;
+		}
 	}
 	
 	return $return_value;
