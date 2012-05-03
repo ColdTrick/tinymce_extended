@@ -12,7 +12,7 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 		}
 		
 		if(!empty($ext_tags)){
-			$ext_tags_array = split(",", $ext_tags);
+			$ext_tags_array = explode(",", $ext_tags);
 			
 			$elements = "*";
 			
