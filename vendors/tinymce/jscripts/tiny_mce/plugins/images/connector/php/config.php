@@ -9,7 +9,7 @@ global $CONFIG;
 //Site root dir
 define('DIR_ROOT',		$CONFIG->dataroot . "tinymce_storage/" . $CONFIG->site_guid ."");
 
-define('USER_DIR_PART',		"/user/" . get_loggedin_userid());
+define('USER_DIR_PART',		"/user/" . elgg_get_logged_in_user_guid());
 define('USER_DIR_ROOT',		$CONFIG->dataroot . "tinymce_storage". USER_DIR_PART);
 
 // check if storage folder exists
