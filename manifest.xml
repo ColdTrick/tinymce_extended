@@ -17,6 +17,11 @@
 		<type>plugin</type>
 		<name>tinymce</name>
 	</requires>
+ 	<requires>
+		<type>priority</type>
+		<plugin>tinymce</plugin>
+		<priority>after</priority>
+	</requires>
 
  	<category>ColdTrick</category>
  	<category>Content</category>
