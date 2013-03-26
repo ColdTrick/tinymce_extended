@@ -9,7 +9,7 @@ $english = array(
 	'tinymce_extended:settings:menu2' => "Second menu buttons",
 	'tinymce_extended:settings:menu3' => "Third menu buttons",
 	'tinymce_extended:settings:valid_elements' => "Configure valid elements",
-	'tinymce_extended:settings:more_info' => "More info about default configurable buttons and plugins can be found here <a href='http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference' target='_blank'>http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference</a>",
+	'tinymce_extended:settings:more_info' => "More info about default configurable buttons and plugins can be found here <a href='http://www.tinymce.com/wiki.php/Configuration' target='_blank'>http://www.tinymce.com/wiki.php/Configuration</a>",
 
 	'tinymce_extended:settings:htmlawed:schemes' => "Extend the htmlawed schemes with the following",
 	
