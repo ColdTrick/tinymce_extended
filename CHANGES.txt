@@ -1,5 +1,9 @@
 = Version history =
 
+x.x:
+
+- fixed: useing wrong defaults
+
 3.1 (2012-04-05):
 
 - added: admin option to extend the htmlawed schemes

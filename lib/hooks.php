@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_value, $params){
 	
@@ -8,7 +8,7 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 		$ext_tags = elgg_get_plugin_setting("valid_elements", "tinymce_extended");
 		
 		if(empty($ext_tags)){
-			$ext_tags = elgg_echo("tinymce_extended:valid_elements");
+			$ext_tags = elgg_echo("tinymce_extended:defaults:valid_elements");
 		}
 		
 		if(!empty($ext_tags)){
@@ -18,6 +18,8 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 			
 			foreach($ext_tags_array as $fulltag){
 				$fulltag = trim(str_replace(array("[", "]"), " ", $fulltag));
+				var_dump($fulltag);
+				exit();
 				$fulltag = explode(" ", $fulltag);
 				
 				$tag = $fulltag[0];
