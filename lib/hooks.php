@@ -18,8 +18,6 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 			
 			foreach($ext_tags_array as $fulltag){
 				$fulltag = trim(str_replace(array("[", "]"), " ", $fulltag));
-				var_dump($fulltag);
-				exit();
 				$fulltag = explode(" ", $fulltag);
 				
 				$tag = $fulltag[0];
