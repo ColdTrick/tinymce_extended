@@ -3,11 +3,12 @@
 	require_once(dirname(__FILE__) . "/lib/hooks.php");
 	
 	function tinymce_extended_init() {
-		elgg_register_plugin_hook_handler('config', 'htmlawed', 'tinymce_extended_htmlawed_config');		
+		elgg_register_plugin_hook_handler("config", "htmlawed", "tinymce_extended_htmlawed_config");
+		elgg_register_plugin_hook_handler("setting", "plugin", "tinymce_extended_plugin_setting");
 		
 		elgg_register_page_handler("tinymce_data", "tinymce_extended_data_handler");
 		
-		elgg_register_js('tinymce', 'mod/tinymce_extended/vendors/tinymce/jscripts/tiny_mce/tiny_mce.js');
+		elgg_register_js("tinymce", "mod/tinymce_extended/vendors/tinymce/jscripts/tiny_mce/tiny_mce.js");
 	}
 	
 	function tinymce_extended_data_handler(){
@@ -18,18 +19,18 @@
 			// backwards compatibility == old versions
 			$filename = elgg_get_config("dataroot") . "tinymce_storage/" .elgg_get_site_entity()->getGUID() . "/" . $datapath;
 		} else {
-			$filename = elgg_get_config("dataroot") . "tinymce_storage/" . $datapath;	
+			$filename = elgg_get_config("dataroot") . "tinymce_storage/" . $datapath;
 		}
 		
 		$contents = file_get_contents($filename);
 		
 		header("Content-type: " . mime_content_type($filename));
-		header('Expires: ' . date('r',time() + 864000));
+		header("Expires: " . date("r",time() + 864000));
 		header("Pragma: public");
 		header("Cache-Control: public");
 		header("Content-Length: " . strlen($contents));
 		echo $contents;
-		return true;		
+		return true;
 	}
 	
 	if (!function_exists("mime_content_type")) {
@@ -256,5 +257,5 @@
       }
    }
 
-     // Make sure the status initialisation function is called on initialisation
-	elgg_register_event_handler('init', 'system', 'tinymce_extended_init', 9999);
+	// Make sure the status initialisation function is called on initialisation
+	elgg_register_event_handler("init", "system", "tinymce_extended_init", 9999);

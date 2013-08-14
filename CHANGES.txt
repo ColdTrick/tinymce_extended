@@ -2,7 +2,8 @@
 
 x.x:
 
-- fixed: useing wrong defaults
+- fixed: using wrong defaults
+- fixed: not using cache reset function after saving plugin settings
 
 3.1 (2012-04-05):
 

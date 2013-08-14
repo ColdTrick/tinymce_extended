@@ -42,14 +42,16 @@ function tinymce_extended_htmlawed_config($hook_name, $entity_type, $return_valu
 	return $return_value;
 }
 
-function tinymce_extended_plugin_setting($hook_name, $entity_type, $return_value, $params){
+function tinymce_extended_plugin_setting($hook_name, $entity_type, $return_value, $params) {
 	static $shutdown_registered;
 	
-	if(is_array($params) && ($params["plugin_id"] == "tinymce_extended")){
-		if(!$shutdown_registered){
-			
-			register_shutdown_function("elgg_invalidate_simplecache");
-			$shutdown_registered = true;
+	if (!isset($shutdown_registered)) {
+		if (!empty($params)  && is_array($params)) {
+			if (elgg_extract("plugin_id", $params) == "tinymce_extended") {
+				
+				register_shutdown_function("elgg_invalidate_simplecache");
+				$shutdown_registered = true;
+			}
 		}
 	}
 }
