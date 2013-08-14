@@ -47,7 +47,7 @@ function tinymce_extended_plugin_setting($hook_name, $entity_type, $return_value
 	
 	if (!isset($shutdown_registered)) {
 		if (!empty($params)  && is_array($params)) {
-			if (elgg_extract("plugin_id", $params) == "tinymce_extended") {
+			if (($plugin = elgg_extract("plugin", $params)) && ($plugin->getID() == "tinymce_extended")) {
 				
 				register_shutdown_function("elgg_invalidate_simplecache");
 				$shutdown_registered = true;
