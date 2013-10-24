@@ -5,12 +5,14 @@
 	<version>3.1</version>
 	<description>Extend TinyMCE with configuration options</description>
 	<website>http://www.coldtrick.com/</website>
-	<copyright>(C) ColdTrick IT Solutions 2009 - 2012</copyright>
-	<license>GNU Public License version 2</license>
+	<repository>https://github.com/ColdTrick/tinymce_extended</repository>
+	<bugtracker>https://github.com/ColdTrick/tinymce_extended/issues</bugtracker>
+	<copyright>(C) ColdTrick IT Solutions 2011 - 2012</copyright>
+	<license>GNU General Public License version 2</license>
  	
  	<requires>
-		<type>elgg_version</type>
-		<version>2011061200</version>
+		<type>elgg_release</type>
+		<version>1.8</version>
 	</requires>
 	
  	<requires>
