@@ -60,7 +60,7 @@ elgg.tinymce.init = function() {
 		mode : "specific_textareas",
 		editor_selector : "elgg-input-longtext",
 		theme : "advanced",
-		plugins : "<?php echo $plugins;?>",
+		plugins : "lists,<?php echo $plugins;?>",
 		relative_urls : false,
 		remove_script_host : false,
 		document_base_url : elgg.config.wwwroot,
