@@ -7,12 +7,12 @@
 	<website>http://www.coldtrick.com/</website>
 	<repository>https://github.com/ColdTrick/tinymce_extended</repository>
 	<bugtracker>https://github.com/ColdTrick/tinymce_extended/issues</bugtracker>
-	<copyright>(C) ColdTrick IT Solutions 2011 - 2012</copyright>
+	<copyright>(C) ColdTrick IT Solutions 2011 - 2015</copyright>
 	<license>GNU General Public License version 2</license>
  	
  	<requires>
 		<type>elgg_release</type>
-		<version>1.8</version>
+		<version>1.8.14</version>
 	</requires>
 	
  	<requires>

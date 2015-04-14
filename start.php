@@ -7,8 +7,6 @@
 		elgg_register_plugin_hook_handler("setting", "plugin", "tinymce_extended_plugin_setting");
 		
 		elgg_register_page_handler("tinymce_data", "tinymce_extended_data_handler");
-		
-		elgg_register_js("tinymce", "mod/tinymce_extended/vendors/tinymce/jscripts/tiny_mce/tiny_mce.js");
 	}
 	
 	function tinymce_extended_data_handler(){
